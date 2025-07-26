@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nam H Nguyen - Portfolio</title>
+    <meta name="description" content="Personal portfolio showcasing writing, projects, and curated readings">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="mondrian-container">
+        
+        <!-- Header -->
+        <div class="mondrian-block header-block" data-content="header">
+            <div class="block-content">
+                <h1>NAM H NGUYEN</h1>
+                <p>Learn. Build. Invest</p>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="mondrian-block red-block" data-content="about">
+            <div class="block-content">
+                <h2>About</h2>
+                <p>Graduate from NYU Abu Dhabi and UChicago Booth </p> 
+                <p>Tech PM and Fintech Investor</p>
+                <p>I love thinking about the future of technology and its impact on society.</p>
+            </div>
+        </div>
+
+        <!-- Writing -->
+        <div class="mondrian-block blue-block" data-content="writing">
+            <div class="block-content">
+                <h2>Writing</h2>
+                <p class="block-description">My thoughts on technology progress, policy, and finance</p>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="mondrian-block yellow-block" data-content="projects">
+            <div class="block-content">
+                <h2>Projects</h2>
+                <p class="block-description">School and work projects</p>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="mondrian-block white-block-1" data-content="contact">
+            <div class="block-content">
+                <h2>Contact</h2>
+                <div class="contact-links">
+                    <a href="mailto:nam.nguyen@chicagobooth.edu">Email</a>
+                    <a href="https://github.com/nam-nguyen-1993">GitHub</a>
+                    <a href="https://linkedin.com/in/namhoangnguyen1">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Readings -->
+        <div class="mondrian-block readings-block" data-content="readings">
+            <div class="block-content">
+                <h2>Readings</h2>
+                <p class="block-description">A collection of links and articles that I find thought-provoking</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mondrian-block nav-block" data-content="navigation">
+            <div class="block-content">
+                <nav class="geometric-nav">
+                    <div class="nav-item" data-target="about">About</div>
+                    <div class="nav-item" data-target="writing">Writing</div>
+                    <div class="nav-item" data-target="projects">Projects</div>
+                    <div class="nav-item" data-target="readings">Readings</div>
+                    <div class="nav-item" data-target="contact">Contact</div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mondrian-block white-block-2" data-content="footer">
+            <div class="block-content">
+                <h3>Nam H Nguyen</h3>
+                <p style="font-size: 0.7rem; opacity: 0.6;">© 2025 All rights reserved. Built with Claude Code</p>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="mondrian-block red-block-small" data-content="decorative">
+            <div class="block-content">
+                <div class="decorative-text">Think</div>
+            </div>
+        </div>
+
+        <div class="mondrian-block blue-block-small" data-content="decorative">
+            <div class="block-content">
+                <div class="decorative-text">Create</div>
+            </div>
+        </div>
+
+        <div class="mondrian-block yellow-block-small" data-content="decorative">
+            <div class="block-content">
+                <div class="decorative-text">Build</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

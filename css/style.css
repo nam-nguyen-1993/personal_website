@@ -1,0 +1,566 @@
+/* Mondrian-Inspired Dynamic Portfolio CSS */
+
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f0f0f0;
+    color: #000;
+    font-weight: 500;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+}
+
+/* Mondrian Color Palette */
+:root {
+    --mondrian-red: #DE1F2B;
+    --mondrian-blue: #0066CC;
+    --mondrian-yellow: #FFD100;
+    --mondrian-white: #FFFFFF;
+    --mondrian-black: #000000;
+    --mondrian-light-gray: #F5F5F5;
+    --line-width: 8px;
+    --hover-scale: 1.05;
+}
+
+/* Main Mondrian Container */
+.mondrian-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 2fr 1.2fr 0.8fr;
+    grid-template-rows: 1.2fr 1fr 1.8fr 1fr;
+    gap: 0;
+    background: var(--mondrian-white);
+    padding: 0;
+}
+
+/* Individual Mondrian Blocks */
+.mondrian-block {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    border: var(--line-width) solid var(--mondrian-black);
+    padding: 0;
+}
+
+.mondrian-block:hover {
+    transform: translateY(-2px);
+    z-index: 10;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Block Content */
+.block-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.mondrian-block:hover .block-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Color Blocks - Reorganized Mondrian Layout */
+.header-block {
+    background: var(--mondrian-white);
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.red-block {
+    background: var(--mondrian-red);
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.blue-block {
+    background: var(--mondrian-blue);
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.yellow-block {
+    background: var(--mondrian-yellow);
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.white-block-1 {
+    background: var(--mondrian-white);
+    grid-column: 4 / 6;
+    grid-row: 1 / 3;
+}
+
+.white-block-2 {
+    background: var(--mondrian-light-gray);
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+.nav-block {
+    background: var(--mondrian-white);
+    grid-column: 5;
+    grid-row: 3 / 5;
+}
+
+.readings-block {
+    background: var(--mondrian-white);
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+/* Small Decorative Blocks - Adjusted positions */
+.red-block-small {
+    background: var(--mondrian-red);
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.blue-block-small {
+    background: var(--mondrian-blue);
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.yellow-block-small {
+    background: var(--mondrian-yellow);
+    grid-column: 4;
+    grid-row: 4;
+}
+
+/* Typography */
+h1 {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    color: var(--mondrian-black);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--mondrian-black);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--mondrian-black);
+    letter-spacing: 0.01em;
+}
+
+.red-block h2,
+.red-block h3,
+.red-block p,
+.red-block .content-item {
+    color: var(--mondrian-white);
+}
+
+.blue-block h2,
+.blue-block h3,
+.blue-block p,
+.blue-block a,
+.blue-block .content-item {
+    color: var(--mondrian-white);
+}
+
+.yellow-block h2,
+.yellow-block h3 {
+    color: var(--mondrian-black);
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.block-description {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    font-style: italic;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.blue-block .block-description,
+.yellow-block .block-description,
+.readings-block .block-description {
+    color: inherit;
+}
+
+.blue-block .block-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.decorative-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mondrian-white);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigation */
+.geometric-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-item {
+    padding: 8px 16px;
+    background: var(--mondrian-black);
+    color: var(--mondrian-white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-item:hover {
+    background: var(--mondrian-red);
+    transform: translateX(5px);
+}
+
+/* Contact Links */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.contact-links a {
+    color: var(--mondrian-black);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border: 2px solid var(--mondrian-black);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    width: fit-content;
+}
+
+.contact-links a:hover {
+    background: var(--mondrian-black);
+    color: var(--mondrian-white);
+    transform: translateX(4px);
+}
+
+/* Content Previews - Creative Layouts */
+.content-preview {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.content-item {
+    font-family: 'Space Mono', 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+}
+
+.blue-block .content-item {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.red-block .content-item {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.content-item:hover {
+    opacity: 0.7;
+    transform: translateX(4px);
+}
+
+.content-item:last-child {
+    border-bottom: none;
+}
+
+/* Reading Categories */
+.reading-category {
+    margin-bottom: 16px;
+}
+
+.category-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    opacity: 0.6;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 4px;
+}
+
+.white-block-1 .category-title {
+    color: var(--mondrian-black);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.category-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reading-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 400;
+    line-height: 1.2;
+    padding: 3px 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.reading-item:hover {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+.content-preview::-webkit-scrollbar {
+    width: 3px;
+}
+
+.content-preview::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content-preview::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+/* Admin Links - Hidden on public index */
+.admin-link {
+    display: none;
+}
+
+/* Remove Mondrian Lines - Only block borders now */
+
+/* Modal System */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--mondrian-white);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90%;
+    padding: 40px;
+    position: relative;
+    transform: scale(0.8) translateY(50px);
+    transition: all 0.4s ease;
+    overflow-y: auto;
+    border: var(--line-width) solid var(--mondrian-black);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--mondrian-black);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--mondrian-red);
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mondrian-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+        gap: 4px;
+        padding: 4px;
+    }
+    
+    .header-block {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    
+    .red-block {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .blue-block {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .yellow-block {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .white-block-1 {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    
+    .readings-block {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+    
+    .nav-block {
+        grid-column: 1 / 3;
+        grid-row: 5;
+    }
+    
+    .white-block-2 {
+        grid-column: 1 / 3;
+        grid-row: 6;
+    }
+    
+    .blue-block-small,
+    .yellow-block-small,
+    .red-block-small {
+        display: none;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .geometric-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes blockPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Special Animation Classes */
+.mondrian-block.animated {
+    animation: blockPulse 3s ease-in-out infinite;
+}
+
+.mondrian-block.color-shift {
+    animation: colorShift 10s linear infinite;
+}
+
+/* Loading Animation */
+.mondrian-block.loading {
+    opacity: 0.7;
+    animation: blockPulse 1.5s ease-in-out infinite;
+}

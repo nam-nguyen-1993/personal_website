@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Admin - Personal Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">ADMIN.PANEL</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">← BACK TO SITE</a></li>
+                <li><a href="writing.html" class="nav-link">WRITING</a></li>
+                <li><a href="projects.html" class="nav-link active">PROJECTS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+        <div class="container">
+            <div class="admin-header">
+                <h1>AI PROJECTS MANAGEMENT</h1>
+                <p>Showcase your AI projects and technical work</p>
+            </div>
+
+            <div class="admin-content">
+                <div class="admin-form">
+                    <h2>ADD NEW AI PROJECT</h2>
+                    <form id="projectForm">
+                        <div class="form-group">
+                            <label for="projectTitle">PROJECT TITLE</label>
+                            <input type="text" id="projectTitle" required placeholder="Enter your project name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectDescription">DESCRIPTION</label>
+                            <textarea id="projectDescription" required placeholder="Brief description of what your project does" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectDetails">DETAILED OVERVIEW</label>
+                            <textarea id="projectDetails" required placeholder="Detailed explanation of your project, methodology, results, etc." rows="10"></textarea>
+                            <small>Include technical details, challenges faced, solutions implemented, and results achieved.</small>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="projectType">PROJECT TYPE</label>
+                                <select id="projectType" required>
+                                    <option value="">Select type</option>
+                                    <option value="machine-learning">Machine Learning</option>
+                                    <option value="deep-learning">Deep Learning</option>
+                                    <option value="nlp">Natural Language Processing</option>
+                                    <option value="computer-vision">Computer Vision</option>
+                                    <option value="data-science">Data Science</option>
+                                    <option value="web-app">Web Application</option>
+                                    <option value="research">Research</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectStatus">STATUS</label>
+                                <select id="projectStatus" required>
+                                    <option value="completed">Completed</option>
+                                    <option value="in-progress">In Progress</option>
+                                    <option value="on-hold">On Hold</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectTags">TECHNOLOGIES/TAGS</label>
+                            <input type="text" id="projectTags" required placeholder="Python, TensorFlow, OpenCV, React, etc.">
+                            <small>Separate technologies with commas</small>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="githubLink">GITHUB LINK</label>
+                                <input type="url" id="githubLink" placeholder="https://github.com/username/project">
+                            </div>
+                            <div class="form-group">
+                                <label for="demoLink">DEMO LINK</label>
+                                <input type="url" id="demoLink" placeholder="https://your-demo-site.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="projectImage">PROJECT IMAGE URL</label>
+                            <input type="url" id="projectImage" placeholder="https://example.com/project-screenshot.jpg">
+                            <small>Optional: Link to a screenshot or demo image of your project</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="keyFeatures">KEY FEATURES</label>
+                            <textarea id="keyFeatures" placeholder="• Feature 1&#10;• Feature 2&#10;• Feature 3" rows="4"></textarea>
+                            <small>List the main features or capabilities of your project</small>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="accuracy">ACCURACY/PERFORMANCE</label>
+                                <input type="text" id="accuracy" placeholder="e.g., 94% accuracy, 0.8 F1-score">
+                            </div>
+                            <div class="form-group">
+                                <label for="dataset">DATASET SIZE</label>
+                                <input type="text" id="dataset" placeholder="e.g., 10,000 samples">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">ADD PROJECT</button>
+                    </form>
+                </div>
+
+                <div class="admin-preview">
+                    <h2>EXISTING PROJECTS</h2>
+                    <div class="projects-list" id="projectsList">
+                        <div class="list-item">
+                            <div class="item-info">
+                                <h3>Sample: Sentiment Analysis Tool</h3>
+                                <p>Machine Learning • Python, NLP • Completed</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn-small btn-secondary">EDIT</button>
+                                <button class="btn-small btn-danger">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-instructions">
+                <h2>PROJECT SHOWCASE TIPS</h2>
+                <div class="instructions-grid">
+                    <div class="instruction-step">
+                        <div class="step-number">01</div>
+                        <h3>HIGHLIGHT RESULTS</h3>
+                        <p>Include specific metrics, accuracy scores, or performance improvements your AI model achieved.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">02</div>
+                        <h3>EXPLAIN THE PROBLEM</h3>
+                        <p>Clearly describe what problem your project solves and why it matters in the real world.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">03</div>
+                        <h3>SHARE THE CODE</h3>
+                        <p>Link to your GitHub repository and provide a live demo if possible to showcase your work.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">04</div>
+                        <h3>TECHNICAL DETAILS</h3>
+                        <p>Include information about datasets, algorithms used, challenges faced, and how you solved them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

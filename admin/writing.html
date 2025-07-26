@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Admin - Personal Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">ADMIN.PANEL</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">← BACK TO SITE</a></li>
+                <li><a href="writing.html" class="nav-link active">WRITING</a></li>
+                <li><a href="projects.html" class="nav-link">PROJECTS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+        <div class="container">
+            <div class="admin-header">
+                <h1>WRITING MANAGEMENT</h1>
+                <p>Add, edit, and manage your writing pieces</p>
+            </div>
+
+            <div class="admin-content">
+                <div class="admin-form">
+                    <h2>ADD NEW WRITING PIECE</h2>
+                    <form id="writingForm">
+                        <div class="form-group">
+                            <label for="title">TITLE</label>
+                            <input type="text" id="title" required placeholder="Enter the title of your writing piece">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">CATEGORY</label>
+                            <select id="category" required>
+                                <option value="">Select category</option>
+                                <option value="essays">Essays</option>
+                                <option value="fiction">Fiction</option>
+                                <option value="technical">Technical</option>
+                                <option value="personal">Personal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="excerpt">EXCERPT</label>
+                            <textarea id="excerpt" required placeholder="Brief description or excerpt (2-3 sentences)" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="content">FULL CONTENT</label>
+                            <textarea id="content" required placeholder="Write your full article content here..." rows="15"></textarea>
+                            <small>You can use basic HTML tags like &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;h3&gt;, etc.</small>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="readTime">READ TIME</label>
+                                <input type="text" id="readTime" placeholder="e.g., 5 min read">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">PUBLISH DATE</label>
+                                <input type="date" id="date" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tags">TAGS (optional)</label>
+                            <input type="text" id="tags" placeholder="Separate tags with commas: AI, technology, writing">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">PUBLISH WRITING</button>
+                    </form>
+                </div>
+
+                <div class="admin-preview">
+                    <h2>EXISTING WRITING PIECES</h2>
+                    <div class="writing-list" id="writingList">
+                        <div class="list-item">
+                            <div class="item-info">
+                                <h3>Sample Essay: The Future of AI</h3>
+                                <p>Essays • 2025.01.15 • 5 min read</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn-small btn-secondary">EDIT</button>
+                                <button class="btn-small btn-danger">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-instructions">
+                <h2>HOW TO ADD YOUR WRITING</h2>
+                <div class="instructions-grid">
+                    <div class="instruction-step">
+                        <div class="step-number">01</div>
+                        <h3>WRITE YOUR CONTENT</h3>
+                        <p>Fill out the form above with your title, category, excerpt, and full content. You can use basic HTML formatting.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">02</div>
+                        <h3>SET METADATA</h3>
+                        <p>Add read time, publish date, and tags to help organize your content and improve discoverability.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <div class="step-number">03</div>
+                        <h3>PUBLISH & SHARE</h3>
+                        <p>Click publish to add your writing to your portfolio. It will automatically appear on your main website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
