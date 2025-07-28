@@ -30,3 +30,11 @@
   from = "/admin/*"
   to = "/admin/dashboard.html"
   status = 200
+  force = true
+
+# Password protect admin area
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache, no-store, must-revalidate"

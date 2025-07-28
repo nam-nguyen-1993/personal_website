@@ -1,0 +1,2 @@
+# Protect admin directory
+/admin/* /admin/dashboard.html 200!
